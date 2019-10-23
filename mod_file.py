@@ -3,6 +3,7 @@ import re
 file_list = subprocess.Popen('git diff origin/master --name-only .', shell=True,stdout=subprocess.PIPE).communicate()[0].decode('utf-8').split('\n')
 cmd = 'pylint '
 i = 0 
+# added some more lines of code in order to mark it as changed branch 
 if len(file_list) != 1:
     while i < len(file_list):
         if file_list[i].find('.py') != -1:
